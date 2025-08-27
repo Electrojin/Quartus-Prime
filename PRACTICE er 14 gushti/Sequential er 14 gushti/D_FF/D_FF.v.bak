@@ -1,0 +1,7 @@
+module D_FF(clock,D,Q);
+input clock,D;
+output reg Q;
+always@(*)
+if (clock)
+Q<=D;
+endmodule

@@ -1,0 +1,53 @@
+module jk_ff(j,k,clk,Q);
+input j,k,clk;
+output reg Q;
+
+always @(posedge clk)begin
+case({j,k})
+2'b00 : Q<=Q;
+2'b01 : Q<=0;
+2'b10 : Q<=1;
+2'b11 : Q<=~Q;
+endcase
+end
+endmodule
+
+module dff(D,clk,Q);
+input D,clk;
+output Q;
+
+jk_ff jk_ff1(D,~D,clk,Q);
+endmodule
+
+module LR_shift(clk,R,Q,Y,W);
+input clk,R,Q,W;
+output reg[3:0]Y;
+ always @(posedge clk.negedge R)
+ begin
+ if(R==1)
+ Y<=4'b0000;
+ else 
+ begin
+ if(Q==0)begin
+ Y[0]<=W;
+ Y[1]<=Y[0];
+ Y[2]<=Y[1];
+ Y[3]<=Y[2];end
+ else 
+ begin
+ Y[3]<=W;
+ Y[2]<=Y[3];
+ Y[1]<=Y[2];
+ Y[0]<=Y[1];end
+ end
+ end
+ endmodule
+ 
+ module dig_system(D,clk,R,Y);
+ input D,clk,R;
+ output reg[3:0]Y;
+ dff dff1(D,clk,Q);
+ LR_shift(clk,R,Q,Y,W);
+ endmodule
+ 
+

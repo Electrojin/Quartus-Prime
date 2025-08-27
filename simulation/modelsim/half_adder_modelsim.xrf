@@ -1,0 +1,14 @@
+vendor_name = ModelSim
+source_file = 1, D:/Quartus er kaj kam/half_adder.v
+source_file = 1, D:/Quartus er kaj kam/db/half_adder.cbx.xml
+design_name = half_adder
+instance = comp, \sum~output , sum~output, half_adder, 1
+instance = comp, \carry~output , carry~output, half_adder, 1
+instance = comp, \A~input , A~input, half_adder, 1
+instance = comp, \B~input , B~input, half_adder, 1
+instance = comp, \sum~0 , sum~0, half_adder, 1
+instance = comp, \carry~0 , carry~0, half_adder, 1
+design_name = hard_block
+instance = comp, \~ALTERA_ASDO_DATA1~~ibuf , ~ALTERA_ASDO_DATA1~~ibuf, hard_block, 1
+instance = comp, \~ALTERA_FLASH_nCE_nCSO~~ibuf , ~ALTERA_FLASH_nCE_nCSO~~ibuf, hard_block, 1
+instance = comp, \~ALTERA_DATA0~~ibuf , ~ALTERA_DATA0~~ibuf, hard_block, 1

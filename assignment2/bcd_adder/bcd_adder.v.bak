@@ -1,0 +1,22 @@
+module bcd_adder(A,B,Cin,Sum,Cout);
+    input [3:0] A,B;
+    input Cin;
+    output [3:0] Sum;
+    output Cout;
+    reg [4:0] Z;
+
+    always @*
+    begin
+        Z = A+B+Cin;
+        if (Z>9)
+        begin
+            Sum = Z+6;
+            Cout = 1;
+        end
+        else
+        begin
+            Sum = Z;
+            Cout = 0;
+        end
+    end
+endmodule

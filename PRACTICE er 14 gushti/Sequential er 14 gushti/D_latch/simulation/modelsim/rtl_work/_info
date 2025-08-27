@@ -1,0 +1,36 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Quartus er kaj kam/PRACTICE er 14 gushti/Sequential er 14 gushti/D_latch/simulation/modelsim
+vD_latch
+!s110 1753204341
+!i10b 1
+!s100 HNVzf@K;`4ZFgFg9?@YFY0
+!s11b Dg1SIo80bB@j0V0VzS_@n1
+IA[:SZ@m1LEO0O6g1;IiEK3
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1753204143
+8D:/Quartus er kaj kam/PRACTICE er 14 gushti/Sequential er 14 gushti/D_latch/D_latch.v
+FD:/Quartus er kaj kam/PRACTICE er 14 gushti/Sequential er 14 gushti/D_latch/D_latch.v
+!i122 0
+L0 1 9
+OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1753204340.000000
+!s107 D:/Quartus er kaj kam/PRACTICE er 14 gushti/Sequential er 14 gushti/D_latch/D_latch.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus er kaj kam/PRACTICE er 14 gushti/Sequential er 14 gushti/D_latch|D:/Quartus er kaj kam/PRACTICE er 14 gushti/Sequential er 14 gushti/D_latch/D_latch.v|
+!i113 1
+o-vlog01compat -work work
+!s92 -vlog01compat -work work {+incdir+D:/Quartus er kaj kam/PRACTICE er 14 gushti/Sequential er 14 gushti/D_latch}
+tCvgOpt 0
+n@d_latch

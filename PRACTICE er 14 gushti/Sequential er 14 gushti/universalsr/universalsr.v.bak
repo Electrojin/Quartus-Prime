@@ -1,0 +1,15 @@
+module universalsr(clk, S1, S0, sin_left, sin_right, D, Q);
+    input clk, S1, S0;
+    input sin_left, sin_right; // serial inputs
+    input [3:0] D;             // parallel data input
+    output reg [3:0] Q;
+
+    always @(posedge clk) begin
+        case ({S1, S0})
+            2'b00: Q <= Q; // Hold
+            2'b01: Q <= {sin_right, Q[3:1]}; // Right Shift
+            2'b10: Q <= {Q[2:0], sin_left};  // Left Shift
+            2'b11: Q <= D; // Parallel Load
+        endcase
+    end
+endmodule

@@ -1,0 +1,19 @@
+module bcd_counter(clk,reset,count);
+input clk,reset;
+output count;
+
+always @(posedge clk or negedge reset)
+
+begin
+
+if(reset == 1)
+count <= 4'b0000;
+
+ else if(count==4'b1001)
+ count <= 4'b0000;
+ 
+ else count<= count+1;
+ end
+ endmodule
+ 
+ 

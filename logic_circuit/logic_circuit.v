@@ -1,0 +1,15 @@
+module logic_circuit(A,B,C,x,y);
+
+input A,B,C;
+output x,y;
+
+wire x0,x1,y0,y1;
+
+assign x0=A^B^C;
+assign x1=x0|A;
+assign x=x1;
+assign y0=x&C&(~C);
+assign y1=(~y0)|C;
+assign y=y1;
+
+endmodule

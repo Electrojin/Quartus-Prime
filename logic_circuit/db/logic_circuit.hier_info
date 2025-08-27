@@ -1,0 +1,12 @@
+|logic_circuit
+A => x0.IN0
+A => x1.IN1
+B => x0.IN1
+C => x0.IN1
+C => y0.IN1
+C => y1.IN1
+C => y0.IN1
+x <= x1.DB_MAX_OUTPUT_PORT_TYPE
+y <= y1.DB_MAX_OUTPUT_PORT_TYPE
+
+

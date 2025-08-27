@@ -1,0 +1,35 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Quartus er kaj kam/logic_circuit/simulation/modelsim
+vlogic_circuit
+!s110 1752341590
+!i10b 1
+!s100 R^^f@84lNIQRbKHceL74?2
+!s11b Dg1SIo80bB@j0V0VzS_@n1
+IUcYh>B;@`9JRU^`A>>zg@1
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1752337288
+8D:/Quartus er kaj kam/logic_circuit/logic_circuit.v
+FD:/Quartus er kaj kam/logic_circuit/logic_circuit.v
+!i122 0
+L0 1 15
+OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1752341590.000000
+!s107 D:/Quartus er kaj kam/logic_circuit/logic_circuit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/Quartus er kaj kam/logic_circuit|D:/Quartus er kaj kam/logic_circuit/logic_circuit.v|
+!i113 1
+o-vlog01compat -work work
+!s92 -vlog01compat -work work {+incdir+D:/Quartus er kaj kam/logic_circuit}
+tCvgOpt 0

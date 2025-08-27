@@ -1,0 +1,39 @@
+# Reading pref.tcl
+# do D_FF_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/Quartus\ er\ kaj\ kam/PRACTICE\ er\ 14\ gushti/Sequential\ er\ 14\ gushti/D_FF {D:/Quartus er kaj kam/PRACTICE er 14 gushti/Sequential er 14 gushti/D_FF/D_FF.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:52:31 on Jul 22,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Quartus er kaj kam/PRACTICE er 14 gushti/Sequential er 14 gushti/D_FF" D:/Quartus er kaj kam/PRACTICE er 14 gushti/Sequential er 14 gushti/D_FF/D_FF.v 
+# -- Compiling module D_FF
+# 
+# Top level modules:
+# 	D_FF
+# End time: 22:52:31 on Jul 22,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim rtl_work.D_FF
+# vsim rtl_work.D_FF 
+# Start time: 22:52:34 on Jul 22,2025
+# Loading rtl_work.D_FF
+add wave -position insertpoint  \
+sim:/D_FF/clk \
+sim:/D_FF/D \
+sim:/D_FF/Q
+force -freeze sim:/D_FF/clk 1 0, 0 {40 ps} -r 80
+force -freeze sim:/D_FF/D 1 0, 0 {15 ps} -r 30
+force -freeze sim:/D_FF/Q 1 0, 0 {5 ps} -r 10
+run
+force -freeze sim:/D_FF/Q 1 0, 0 {15 ps} -r 30
+run
+# End time: 22:54:18 on Jul 22,2025, Elapsed time: 0:01:44
+# Errors: 0, Warnings: 0

@@ -1,0 +1,58 @@
+|pe4to2all
+A => A.IN2
+B => B.IN1
+C => C.IN1
+D => D.IN1
+E => ~NO_FANOUT~
+F => F.IN1
+L <= fa:m4.port3
+M <= fa:m4.port4
+N <= ha:m3.port3
+
+
+|pe4to2all|pe4to1:m1
+d[0] => Decoder2.IN3
+d[1] => Decoder1.IN2
+d[1] => Decoder2.IN2
+d[2] => Decoder0.IN1
+d[2] => Decoder1.IN1
+d[2] => Decoder2.IN1
+d[3] => Decoder0.IN0
+d[3] => Decoder1.IN0
+d[3] => Decoder2.IN0
+y[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+v <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pe4to2all|mux2to1:m2
+i0 => y.IN0
+i1 => y.IN0
+s => y.IN1
+s => y.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pe4to2all|ha:m3
+a => sum.IN0
+a => carry.IN0
+b => sum.IN1
+b => carry.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pe4to2all|fa:m4
+a1 => sum1.IN0
+a1 => cout.IN0
+a1 => cout.IN0
+a2 => sum1.IN1
+a2 => cout.IN1
+a2 => cout.IN0
+cin => sum1.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum1 <= sum1.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+

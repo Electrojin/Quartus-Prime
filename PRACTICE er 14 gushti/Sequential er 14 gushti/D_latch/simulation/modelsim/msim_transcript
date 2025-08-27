@@ -1,0 +1,36 @@
+# Reading pref.tcl
+# do D_latch_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/Quartus\ er\ kaj\ kam/PRACTICE\ er\ 14\ gushti/Sequential\ er\ 14\ gushti/D_latch {D:/Quartus er kaj kam/PRACTICE er 14 gushti/Sequential er 14 gushti/D_latch/D_latch.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:12:20 on Jul 22,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Quartus er kaj kam/PRACTICE er 14 gushti/Sequential er 14 gushti/D_latch" D:/Quartus er kaj kam/PRACTICE er 14 gushti/Sequential er 14 gushti/D_latch/D_latch.v 
+# -- Compiling module D_latch
+# 
+# Top level modules:
+# 	D_latch
+# End time: 23:12:21 on Jul 22,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+vsim rtl_work.D_latch
+# vsim rtl_work.D_latch 
+# Start time: 23:12:39 on Jul 22,2025
+# Loading rtl_work.D_latch
+add wave -position insertpoint  \
+sim:/D_latch/D \
+sim:/D_latch/E \
+sim:/D_latch/Q
+force -freeze sim:/D_latch/D 1 0, 0 {50 ps} -r 100
+force -freeze sim:/D_latch/E 1 0, 0 {25 ps} -r 50
+run
+# End time: 23:14:17 on Jul 22,2025, Elapsed time: 0:01:38
+# Errors: 0, Warnings: 0

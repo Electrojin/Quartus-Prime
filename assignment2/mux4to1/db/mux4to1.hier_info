@@ -1,0 +1,34 @@
+|mux4to1
+S0 => S0.IN2
+S1 => S1.IN1
+I0 => I0.IN1
+I1 => I1.IN1
+I2 => I2.IN1
+I3 => I3.IN1
+Y <= mux2to1:m3.port0
+
+
+|mux4to1|mux2to1:m1
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+s => Y.IN0
+s => Y.IN0
+i0 => Y.IN1
+i1 => Y.IN1
+
+
+|mux4to1|mux2to1:m2
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+s => Y.IN0
+s => Y.IN0
+i0 => Y.IN1
+i1 => Y.IN1
+
+
+|mux4to1|mux2to1:m3
+Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
+s => Y.IN0
+s => Y.IN0
+i0 => Y.IN1
+i1 => Y.IN1
+
+

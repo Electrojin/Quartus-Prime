@@ -1,0 +1,46 @@
+# Reading pref.tcl
+# do ha_2to1_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/Quartus\ er\ kaj\ kam/assignment2/ha_2to1 {D:/Quartus er kaj kam/assignment2/ha_2to1/ha_2to1.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 09:03:03 on Jul 20,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Quartus er kaj kam/assignment2/ha_2to1" D:/Quartus er kaj kam/assignment2/ha_2to1/ha_2to1.v 
+# -- Compiling module ha_2to1
+# -- Compiling module mux_2to1
+# -- Compiling module half_adder
+# 
+# Top level modules:
+# 	ha_2to1
+# End time: 09:03:03 on Jul 20,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim rtl_work.ha_2to1
+# vsim rtl_work.ha_2to1 
+# Start time: 09:03:14 on Jul 20,2025
+# Loading rtl_work.ha_2to1
+# Loading rtl_work.mux_2to1
+# Loading rtl_work.half_adder
+add wave -position insertpoint  \
+sim:/ha_2to1/I0 \
+sim:/ha_2to1/I1 \
+sim:/ha_2to1/A \
+sim:/ha_2to1/B \
+sim:/ha_2to1/Y \
+sim:/ha_2to1/Carry \
+sim:/ha_2to1/sum
+force -freeze sim:/ha_2to1/I0 0 0, 1 {40 ps} -r 80
+force -freeze sim:/ha_2to1/I1 1 0, 0 {20 ps} -r 40
+force -freeze sim:/ha_2to1/A 1 0, 0 {10 ps} -r 20
+force -freeze sim:/ha_2to1/B 0 0, 1 {5 ps} -r 10
+run
+# End time: 09:09:09 on Jul 20,2025, Elapsed time: 0:05:55
+# Errors: 0, Warnings: 0

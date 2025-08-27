@@ -1,0 +1,92 @@
+# Reading pref.tcl
+# do half_adder_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/Quartus\ er\ kaj\ kam {D:/Quartus er kaj kam/half_adder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:08:21 on Jun 28,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Quartus er kaj kam" D:/Quartus er kaj kam/half_adder.v 
+# -- Compiling module half_adder
+# 
+# Top level modules:
+# 	half_adder
+# End time: 13:08:21 on Jun 28,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+D:/Quartus\ er\ kaj\ kam {D:/Quartus er kaj kam/half_adder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 13:08:21 on Jun 28,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Quartus er kaj kam" D:/Quartus er kaj kam/half_adder.v 
+# -- Compiling module half_adder
+# 
+# Top level modules:
+# 	half_adder
+# End time: 13:08:22 on Jun 28,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  half_adder.tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" half_adder.tb 
+# Start time: 13:08:22 on Jun 28,2025
+# ** Error (suppressible): (vsim-19) Failed to access library 'half_adder' at "half_adder".
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./half_adder_run_msim_rtl_verilog.do PAUSED at line 12
+vsim rtl_work.half_adder
+# vsim rtl_work.half_adder 
+# Start time: 13:08:22 on Jun 28,2025
+# Loading work.half_adder
+add wave -position insertpoint  \
+sim:/half_adder/A \
+sim:/half_adder/B \
+sim:/half_adder/sum \
+sim:/half_adder/carry
+force -freeze sim:/half_adder/A 1 0, 0 {50 ps} -r 100
+force -freeze sim:/half_adder/B 1 0, 0 {50 ps} -r 100
+
+run 100ps
+force -freeze sim:/half_adder/A 1 0, 0 {100 ps} -r 200
+run 100 ps
+run
+run
+run
+run
+force -freeze sim:/half_adder/B 1 0, 0 {10000 ps} -r 20000
+force -freeze sim:/half_adder/B 1 0, 0 {100 ps} -r 200
+run
+run
+run
+force -freeze sim:/half_adder/B 1 0, 0 {50 ps} -r 100
+force -freeze sim:/half_adder/sum 1 0, 0 {50 ps} -r 100
+force -freeze sim:/half_adder/carry 1 0, 0 {50 ps} -r 100
+run
+force -freeze sim:/half_adder/B 1 0, 0 {50 ps} -r 100
+force -freeze sim:/half_adder/A 1 0, 0 {50 ps} -r 100
+run
+run
+force -freeze sim:/half_adder/A 1 0, 0 {50 ps} -r 100
+force -freeze sim:/half_adder/B 1 0, 0 {50 ps} -r 100
+force -freeze sim:/half_adder/A 0 0, 1 {5000000000 ps} -r {10 ms}
+force -freeze sim:/half_adder/B 0 0, 1 {2500000000 ps} -r {5 ms}
+force -freeze sim:/half_adder/carry 0 0, 1 {1250000000 ps} -r {2.5 ms}
+run
+force -freeze sim:/half_adder/A 0 0, 1 {5000000000 ps} -r {10 ms}
+force -freeze sim:/half_adder/B 0 0, 1 {2500000000 ps} -r {5 ms}
+force -freeze sim:/half_adder/carry 0 0, 1 {1250000000 ps} -r {2.5 ms}
+force -freeze sim:/half_adder/A 1 0, 0 {5000000000 ps} -r {10 ms}
+force -freeze sim:/half_adder/A 0 0, 1 {5 ps} -r {10 }
+force -freeze sim:/half_adder/B 0 0, 1 {2 ps} -r {5 }
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf {D:/Quartus er kaj kam/simulation/modelsim/wave.do}
+# Break key hit
+# Simulation stop requested.
+# End time: 14:17:44 on Jun 28,2025, Elapsed time: 1:09:22
+# Errors: 1, Warnings: 0

@@ -1,0 +1,59 @@
+module top_module (
+    input [3:0] in,
+    output [3:0] out
+);
+    wire [3:0] a, b, L, M;
+
+    // Module X: Grey to Binary
+    module_x mx (.grey(in), .binary(a));
+
+    // Module Y: 2's complement and reverse
+    module_y my (.in(a), .out(b));
+
+    assign L = b;
+    assign M = a;
+
+    // Module Z: Subtractor M - L
+    module_z mz (.L(L), .M(M), .out(out));
+
+endmodule
+
+module module_x (
+    input [3:0] grey,
+    output [3:0] binary
+);
+    assign binary[3] = grey[3];
+    assign binary[2] = grey[2] ^ binary[3];
+    assign binary[1] = grey[1] ^ binary[2];
+    assign binary[0] = grey[0] ^ binary[1];
+endmodule
+
+module module_y (
+    input [3:0] in,
+    output [3:0] out
+);
+    wire [3:0] twos_comp;
+
+    assign twos_comp = ~in + 4'b0001;  // 2's complement
+    assign out[3] = twos_comp[0];      // reverse
+    assign out[2] = twos_comp[1];
+    assign out[1] = twos_comp[2];
+    assign out[0] = twos_comp[3];
+endmodule
+
+module module_z (
+    input [3:0] L,
+    input [3:0] M,
+    output reg [3:0] out
+);
+    reg [4:0] temp;
+
+    always @(*) begin
+        temp = M + (~L + 4'b0001);  // M - L using 2’s complement
+        if (temp[4] == 0) begin     // negative result
+            out = ~temp[3:0] + 4'b0001;  // Convert to positive
+        end else begin
+            out = temp[3:0];
+        end
+    end
+endmodule

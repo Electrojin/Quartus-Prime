@@ -1,0 +1,41 @@
+# Reading pref.tcl
+# do logic_circuit_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/Quartus\ er\ kaj\ kam/logic_circuit {D:/Quartus er kaj kam/logic_circuit/logic_circuit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:33:10 on Jul 12,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Quartus er kaj kam/logic_circuit" D:/Quartus er kaj kam/logic_circuit/logic_circuit.v 
+# -- Compiling module logic_circuit
+# 
+# Top level modules:
+# 	logic_circuit
+# End time: 23:33:10 on Jul 12,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim rtl_work.logic_circuit
+# vsim rtl_work.logic_circuit 
+# Start time: 23:33:14 on Jul 12,2025
+# Loading rtl_work.logic_circuit
+add wave -position insertpoint  \
+sim:/logic_circuit/A \
+sim:/logic_circuit/B \
+sim:/logic_circuit/C \
+sim:/logic_circuit/x \
+sim:/logic_circuit/y
+force -freeze sim:/logic_circuit/C 0 0, 1 {40 ps} -r 80
+force -freeze sim:/logic_circuit/B 1 0, 0 {20 ps} -r 40
+force -freeze sim:/logic_circuit/A 0 0, 1 {10 ps} -r 20
+force -freeze sim:/logic_circuit/x 1 0, 0 {5 ps} -r 10
+force -freeze sim:/logic_circuit/y 1 0, 0 {2 ps} -r 5
+run
+# End time: 23:35:25 on Jul 12,2025, Elapsed time: 0:02:11
+# Errors: 0, Warnings: 0
